@@ -4,7 +4,7 @@ public class Spaceship extends Sprite2D {
 	private double xSpeed=0;
 	
 	public Spaceship(Image i) {
-		super(i); // invoke constructor on superclass Sprite2D
+		super(i, i); // invoke constructor on superclass Sprite2D
 	}
 	
 	public void setXSpeed(double dx) {

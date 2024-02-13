@@ -3,8 +3,8 @@ import java.awt.*;
 public class Alien extends Sprite2D {
 	private static double xSpeed=0;
 	
-	public Alien(Image i) {
-		super(i); // invoke constructor on superclass Sprite2D
+	public Alien(Image i, Image j) {
+		super(i, j); // invoke constructor on superclass Sprite2D
 	}
 	
 	// public interface
@@ -19,7 +19,7 @@ public class Alien extends Sprite2D {
 	}
 	
 	public static void setFleetXSpeed(double dx) {
-		xSpeed=dx;
+		xSpeed = dx;
 	}
 	
 	public static void reverseDirection() {

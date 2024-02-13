@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf0dd996-4c79-4fd7-8aca-889e0e6e4856" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment5_SpaceInvaders_complete.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alien_ship_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alien_ship_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bullet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/player_ship.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Alien.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InvadersApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PlayerBullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Spaceship.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sprite2D.java" afterDir="false" />
+    <list default="true" id="bf0dd996-4c79-4fd7-8aca-889e0e6e4856" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InvadersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvadersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlayerBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spaceship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spaceship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprite2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprite2D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,9 +64,30 @@
       <option name="presentableId" value="Default" />
       <updated>1707839024492</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1707839944462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707839944462</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
