@@ -22,7 +22,7 @@ private static final Dimension WindowSize = new Dimension(800,600);
 	private int score = 0;
 	private int best_Score = 0;
 	private int waveNum = 1;
-	private Iterator<PlayerBullet> al = bulletList.iterator();
+	private Iterator iterator = bulletList.iterator();
 	
 	// constructor
 	public InvadersApplication() {
@@ -77,6 +77,7 @@ private static final Dimension WindowSize = new Dimension(800,600);
 					bulletList.get(i).move();
 					for (int j = 0; j < NUMALIENS; j++) {
 						if (bulletList.get(i).isAlive && AliensArray[j].isAlive) {
+							// checking for collision between the bullet and the aliens
 							if (
 									((AliensArray[j].x < bulletList.get(i).x) && (AliensArray[j].x + 50 > bulletList.get(i).x) ||
 											(bulletList.get(i).x < AliensArray[j].x) && (bulletList.get(i).x + 6 > AliensArray[j].x))
@@ -84,6 +85,7 @@ private static final Dimension WindowSize = new Dimension(800,600);
 											((AliensArray[j].y < bulletList.get(i).y) && (AliensArray[j].y + 32 > bulletList.get(i).y) ||
 													(bulletList.get(i).y < AliensArray[j].y) && (bulletList.get(i).y + 16 > AliensArray[j].y))
 							) {
+								// if the bullet collides with the alien set isAlive for both to false
 								score += 10;
 								AliensArray[j].isAlive = false;
 								bulletList.get(i).isAlive = false;
@@ -91,9 +93,11 @@ private static final Dimension WindowSize = new Dimension(800,600);
 						}
 					}
 				}
+
 				// check player collision
 				for (int j = 0; j < NUMALIENS; j++) {
 					if (AliensArray[j].isAlive) {
+						// checking for collision between the player an aliens
 						if (
 								((AliensArray[j].x < PlayerShip.x) && (AliensArray[j].x + 50 > PlayerShip.x) ||
 										(PlayerShip.x < AliensArray[j].x) && (PlayerShip.x + 54 > AliensArray[j].x))
@@ -101,6 +105,7 @@ private static final Dimension WindowSize = new Dimension(800,600);
 										((AliensArray[j].y < PlayerShip.y) && (AliensArray[j].y + 32 > PlayerShip.y) ||
 												(PlayerShip.y < AliensArray[j].y) && PlayerShip.y + 32 > AliensArray[j].y)
 						) {
+							// if the aliens collide with the player then reset the game
 							gameState = false;
 							if(score > best_Score){
 								best_Score = score;
@@ -112,17 +117,19 @@ private static final Dimension WindowSize = new Dimension(800,600);
 				}
 
 				int deathCheck = 0;
+				// checking if all the aliens are dead
 				for (int i = 0; i < NUMALIENS; i++) {
 					if (!AliensArray[i].isAlive) {
 						deathCheck++;
 					}
 				}
+				// checking if all the aliens are dead then calling startNewWave if true
 				if (deathCheck == NUMALIENS) {
 					score += 50;
 					startNewWave();
 				}
 			}
-
+			
 			// 3: force an application repaint
 			this.repaint();
 		}
@@ -171,13 +178,14 @@ private static final Dimension WindowSize = new Dimension(800,600);
 
 	// method handles the shooting of a bullet
 	public void shootBullet(){
-
+		// adding the player image to the arraylist when fired
 		PlayerBullet temp = new PlayerBullet(bulletImage, WindowSize.width);
 		temp.setPosition(PlayerShip.x + 25, PlayerShip.y - 10);
 		bulletList.add(temp);
 
 	}
 
+	// method resets the aliens adding 2 to the xSpeed
 	public void startNewWave(){
 		waveNum += 2;
 		for (int i=0; i<NUMALIENS; i++) {
@@ -211,6 +219,7 @@ private static final Dimension WindowSize = new Dimension(800,600);
 		PlayerShip = new Spaceship(shipImage);
 		PlayerShip.setPosition(300,560);
 
+		// getting the bullet image from the working directory
 		icon = new ImageIcon(workingDirectory + "//bullet.png");
 		bulletImage = icon.getImage();
 
@@ -221,6 +230,7 @@ private static final Dimension WindowSize = new Dimension(800,600);
 
 	// application's paint method
 	public void paint(Graphics g) {
+		// If the game state is true then print the game items to the screen
 		if(gameState) {
 			if (!isInitialised)
 				return;
@@ -250,6 +260,7 @@ private static final Dimension WindowSize = new Dimension(800,600);
 			g.setColor(Color.BLACK);
 			g.fillRect(0, 0, WindowSize.width, WindowSize.height);
 			g.setColor(Color.WHITE);
+			// Printing the Menu to the window
 			g.setFont(new Font("Ariel", Font.PLAIN, 50));
 			g.drawString("Space Invaders!", 200, 150);
 			g.setFont(new Font("Ariel", Font.PLAIN, 25));

@@ -26,6 +26,7 @@ public class Sprite2D {
 	
 	public void paint(Graphics g) {
 		frameCount++;
+		// changing the image every 50 frames
 		if(isAlive) {
 			if (frameCount % 100 < 50)
 				g.drawImage(myImage, (int) x, (int) y, null);
